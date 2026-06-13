@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+# real market data and generated reports are not committed
+data/*.csv
+data/*.zip
+data/**/*.csv
+data/**/*.zip
+reports/*.csv
+reports/*.json
+reports/*.txt
