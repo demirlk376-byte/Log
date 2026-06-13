@@ -1,0 +1,7 @@
+stage,input,pass,blocked,note
+setups_formed_SRR1,97056,3758,,5M closes with a sweep+reclaim setup
+v0_10_1_soft_acceptance,3758,2591,1167,WATCH=263 CANCEL=904
+v0_11_aplus_cost_survival,2591,116,2475,CANCEL on hard-fail/quality/sub2r
+v0_11_1_stale_duplicate,116,104,12,blocked -> WATCH (cooldown/active/dup/prior-watch)
+EXECUTE_CANDIDATE,116,104,,clean promotions
+retest_fill,104,55,49,entry must actually trade; else expire
