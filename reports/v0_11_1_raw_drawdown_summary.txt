@@ -1,0 +1,6 @@
+BTC v0.11.1 RAW REPLAY — drawdown / risk summary
+filled_trades        : 55
+total_R (net 0.08%)  : -22.2002
+max_drawdown_R       : -31.3928
+max_consecutive_SL   : 25
+reliability_note     : reliable backtest: trade_log üretildi, summary gerçek trade'lerden hesaplandı.

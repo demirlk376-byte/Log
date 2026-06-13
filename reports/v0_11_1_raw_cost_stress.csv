@@ -1,0 +1,8 @@
+scenario,roundtrip_bps,trades,total_R,win_rate,profit_factor
+maker_maker,0.0,55,-8.3171,0.1273,0.8267
+maker_taker_1p6,1.6,55,-11.0938,0.1273,0.7801
+taker_taker_3p2,3.2,55,-13.8705,0.1273,0.7377
+maker_taker_slip1,3.6,55,-14.5647,0.1273,0.7277
+maker_taker_slip2,5.6,55,-18.0356,0.1273,0.681
+stress_7p6,7.6,55,-21.5065,0.1273,0.6391
+primary_0p08pct,8.0,55,-22.2006,0.1273,0.6313
