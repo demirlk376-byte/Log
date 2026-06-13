@@ -101,6 +101,13 @@ def run_replay(data_dir: str, cfg: Config) -> Dict:
     lifetime = cfg.execution["candidate_lifetime_5m"]
     sl_first = cfg.execution["sl_first_on_tie"]
 
+    # Bounded windows handed to the engine each 5M close. The engine only ever
+    # looks back a fixed number of candles; passing tails keeps the replay O(n)
+    # (full-history slices would make it O(n^2)).
+    w5 = cfg.indicators["atr_period"] + cfg.geometry["sweep_lookback_5m"] + 5
+    w15 = cfg.structure["m15_range_lookback"] + 2
+    wh1 = cfg.structure["h1_context_lookback"] + 2
+
     closes_time = (df1["timestamp"] + pd.Timedelta("1min")).tolist()
     highs = df1["high"].tolist()
     lows = df1["low"].tolist()
@@ -177,7 +184,11 @@ def run_replay(data_dir: str, cfg: Config) -> Dict:
 
             state.bar_index_5m += 1
             d = signal_engine.evaluate_at_5m_close(
-                ct, c5[:i5], c15[:i15], ch1[:ih1], state, cfg
+                ct,
+                c5[max(0, i5 - w5):i5],
+                c15[max(0, i15 - w15):i15],
+                ch1[max(0, ih1 - wh1):ih1],
+                state, cfg,
             )
             setup = d.pop("setup", None)
             decisions.append(d)
