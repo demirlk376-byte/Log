@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import json
 import os
+import shutil
 from collections import Counter
 from typing import Dict, List
 
@@ -225,5 +226,16 @@ def write_all(results: Dict, cfg, out_dir: str) -> Dict:
         fh.write(f"max_drawdown_R       : {round(_max_drawdown_R(rr),4) if rr else 'n/a'}\n")
         fh.write(f"max_consecutive_SL   : {_max_consecutive_sl([t['exit_reason'] for t in trades])}\n")
         fh.write(f"reliability_note     : {summary['reliability_note']}\n")
+
+    # Also emit the plain file names requested in the task brief (same content).
+    aliases = {
+        "v0_11_1_raw_monthly_summary.csv": "monthly_summary.csv",
+        "v0_11_1_raw_IS_OOS_summary.csv": "IS_OOS_summary.csv",
+        "v0_11_1_raw_cost_stress.csv": "cost_stress.csv",
+        "v0_11_1_raw_drawdown_summary.txt": "drawdown_summary.txt",
+        "v0_11_1_raw_blocked_stale_duplicate_log.csv": "blocked_stale_duplicate_log.csv",
+    }
+    for src, dst in aliases.items():
+        shutil.copyfile(os.path.join(out_dir, src), os.path.join(out_dir, dst))
 
     return summary

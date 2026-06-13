@@ -1,0 +1,28 @@
+{
+  "total_decisions": 97056,
+  "WATCH": 32375,
+  "CANCEL": 64577,
+  "EXECUTE_CANDIDATE": 104,
+  "filled_trade": 55,
+  "total_R": -22.2002,
+  "win_rate": 0.1273,
+  "profit_factor": 0.6313,
+  "max_drawdown": -31.3928,
+  "top_cancel_reason": "range_middle",
+  "top_sl_reason": "v10_1_pass",
+  "max_consecutive_SL": 25,
+  "data_span": {
+    "start": "2025-05-01 00:00:00",
+    "end": "2026-04-30 23:59:00"
+  },
+  "continuity": {
+    "rows": 485280,
+    "start": "2025-05-01 00:00:00",
+    "end": "2026-04-30 23:59:00",
+    "expected_minutes": 525600,
+    "missing_minutes": 40320,
+    "missing_pct": 7.6712,
+    "first_missing": "2026-02-01 00:00:00"
+  },
+  "reliability_note": "reliable backtest: trade_log \u00fcretildi, summary ger\u00e7ek trade'lerden hesapland\u0131."
+}
