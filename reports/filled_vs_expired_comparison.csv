@@ -1,0 +1,3 @@
+group,count,R_abs_bps_mean,R_abs_bps_median,R_abs_ATR_mean,R_abs_ATR_median,TP1_R_mean,TP1_R_median,body_ratio_mean,body_ratio_median,acceptance_close_strength_mean,acceptance_close_strength_median
+filled_55,55,34.3649,32.5584,1.2868,1.1498,6.1664,5.6297,0.5966,0.5955,0.8711,0.8758
+expired_no_fill_49,49,33.6958,31.6441,1.3349,1.2043,5.8816,5.4299,0.6969,0.6925,0.898,0.9255

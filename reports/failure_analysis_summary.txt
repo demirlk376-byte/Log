@@ -1,0 +1,131 @@
+BTC v0.11.1 SRR-1 FAILURE ANALYSIS — real data, no rule changes proposed
+run date: 2026-06-13  data: 2025-05 to 2026-04 (missing 2026-02)
+
+── FUNNEL ─────────────────────────────────────────────────────────────
+total 5M decisions    : 97056
+setups formed (SRR-1) : 3758
+after v0.10.1         : 2591 PASS | 263 WATCH | 904 CANCEL
+after v0.11 A+        :  116 PASS | 2475 CANCEL  (hardest gate)
+after v0.11.1         :  104 EXECUTE_CANDIDATE | 12 BLOCKED
+retest fill           :   55 filled | 49 expired-no-fill
+filled_trade          :   55  (7 TP1 | 48 SL)
+net R (0.08% cost)    : -22.20
+
+── 1. DIRECTION ────────────────────────────────────────────────────────
+  group=long | trades=35 | wins=3 | win_rate=0.086 | total_R=-24.0311 | avg_R=-0.6866 | profit_factor=0.4016
+  group=short | trades=20 | wins=4 | win_rate=0.2 | total_R=1.8309 | avg_R=0.0915 | profit_factor=1.0913
+
+── 2. MONTHLY ──────────────────────────────────────────────────────────
+  group=2025-05 | trades=5 | wins=0 | win_rate=0.0 | total_R=-6.4381 | avg_R=-1.2876 | profit_factor=0.0
+  group=2025-06 | trades=7 | wins=3 | win_rate=0.429 | total_R=11.5482 | avg_R=1.6497 | profit_factor=3.3354
+  group=2025-07 | trades=2 | wins=1 | win_rate=0.5 | total_R=1.7848 | avg_R=0.8924 | profit_factor=2.5174
+  group=2025-08 | trades=3 | wins=0 | win_rate=0.0 | total_R=-3.838 | avg_R=-1.2793 | profit_factor=0.0
+  group=2025-09 | trades=4 | wins=0 | win_rate=0.0 | total_R=-5.0735 | avg_R=-1.2684 | profit_factor=0.0
+  group=2025-10 | trades=7 | wins=0 | win_rate=0.0 | total_R=-8.8165 | avg_R=-1.2595 | profit_factor=0.0
+  group=2025-11 | trades=8 | wins=0 | win_rate=0.0 | total_R=-10.0598 | avg_R=-1.2575 | profit_factor=0.0
+  group=2025-12 | trades=6 | wins=2 | win_rate=0.333 | total_R=5.7282 | avg_R=0.9547 | profit_factor=2.1527
+  group=2026-01 | trades=4 | wins=0 | win_rate=0.0 | total_R=-4.8935 | avg_R=-1.2234 | profit_factor=0.0
+  group=2026-03 | trades=6 | wins=1 | win_rate=0.167 | total_R=1.5834 | avg_R=0.2639 | profit_factor=1.2525
+  group=2026-04 | trades=3 | wins=0 | win_rate=0.0 | total_R=-3.7254 | avg_R=-1.2418 | profit_factor=0.0
+
+── 3. IS / OOS ─────────────────────────────────────────────────────────
+  group=IS | trades=35 | wins=6 | win_rate=0.171 | total_R=-6.3482 | avg_R=-0.1814 | profit_factor=0.8261
+  group=OOS | trades=20 | wins=1 | win_rate=0.05 | total_R=-15.852 | avg_R=-0.7926 | profit_factor=0.3313
+
+── 4. SESSION (fill time UTC) ──────────────────────────────────────────
+  group=Asia(00-08) | trades=17 | wins=1 | win_rate=0.059 | total_R=-16.8772 | avg_R=-0.9928 | profit_factor=0.1646
+  group=London(08-13) | trades=3 | wins=0 | win_rate=0.0 | total_R=-3.6396 | avg_R=-1.2132 | profit_factor=0.0
+  group=NY_Late(17-22) | trades=9 | wins=0 | win_rate=0.0 | total_R=-11.1023 | avg_R=-1.2336 | profit_factor=0.0
+  group=NY_Open(13-17) | trades=22 | wins=4 | win_rate=0.182 | total_R=-0.5611 | avg_R=-0.0255 | profit_factor=0.9753
+  group=Night(22-24) | trades=4 | wins=2 | win_rate=0.5 | total_R=9.98 | avg_R=2.495 | profit_factor=4.9179
+
+── 5. TP1_R BINS ───────────────────────────────────────────────────────
+  group=1.8-2.5 | trades=5 | wins=0 | win_rate=0.0 | total_R=-5.8377 | avg_R=-1.1675 | profit_factor=0.0
+  group=2.5-4.0 | trades=10 | wins=4 | win_rate=0.4 | total_R=5.7604 | avg_R=0.576 | profit_factor=1.7555
+  group=4.0-6.0 | trades=16 | wins=0 | win_rate=0.0 | total_R=-20.1033 | avg_R=-1.2565 | profit_factor=0.0
+  group=6.0-10.0 | trades=17 | wins=3 | win_rate=0.176 | total_R=6.8489 | avg_R=0.4029 | profit_factor=1.3854
+  group=10+ | trades=7 | wins=0 | win_rate=0.0 | total_R=-8.8685 | avg_R=-1.2669 | profit_factor=0.0
+
+── 6. R_abs_bps BINS ───────────────────────────────────────────────────
+  group=22-35 | trades=31 | wins=3 | win_rate=0.097 | total_R=-20.7901 | avg_R=-0.6706 | profit_factor=0.4285
+  group=35-50 | trades=20 | wins=3 | win_rate=0.15 | total_R=-1.8876 | avg_R=-0.0944 | profit_factor=0.9077
+  group=50-75 | trades=3 | wins=1 | win_rate=0.333 | total_R=1.5784 | avg_R=0.5261 | profit_factor=1.6892
+  group=75+ | trades=1 | wins=0 | win_rate=0.0 | total_R=-1.1009 | avg_R=-1.1009 | profit_factor=0.0
+
+── 7. R_abs_ATR BINS ───────────────────────────────────────────────────
+  group=0.7-1.0 | trades=21 | wins=2 | win_rate=0.095 | total_R=-8.8817 | avg_R=-0.4229 | profit_factor=0.6331
+  group=1.0-1.5 | trades=20 | wins=3 | win_rate=0.15 | total_R=-5.7343 | avg_R=-0.2867 | profit_factor=0.731
+  group=1.5-2.5 | trades=11 | wins=2 | win_rate=0.182 | total_R=-4.1172 | avg_R=-0.3743 | profit_factor=0.6329
+  group=2.5+ | trades=3 | wins=0 | win_rate=0.0 | total_R=-3.467 | avg_R=-1.1557 | profit_factor=0.0
+
+── 8. BODY_RATIO BINS ──────────────────────────────────────────────────
+  group=0.30-0.40 | trades=13 | wins=2 | win_rate=0.154 | total_R=-3.1648 | avg_R=-0.2434 | profit_factor=0.7717
+  group=0.40-0.55 | trades=10 | wins=1 | win_rate=0.1 | total_R=-7.4807 | avg_R=-0.7481 | profit_factor=0.3409
+  group=0.55-0.70 | trades=15 | wins=3 | win_rate=0.2 | total_R=0.6588 | avg_R=0.0439 | profit_factor=1.0441
+  group=0.70+ | trades=17 | wins=1 | win_rate=0.059 | total_R=-12.2135 | avg_R=-0.7184 | profit_factor=0.3914
+
+── 9. CLOSE_STRENGTH BINS ──────────────────────────────────────────────
+  group=0.60-0.70 | trades=4 | wins=1 | win_rate=0.25 | total_R=3.7768 | avg_R=0.9442 | profit_factor=2.0231
+  group=0.70-0.80 | trades=8 | wins=0 | win_rate=0.0 | total_R=-10.0731 | avg_R=-1.2591 | profit_factor=0.0
+  group=0.80-0.90 | trades=21 | wins=2 | win_rate=0.095 | total_R=-10.6432 | avg_R=-0.5068 | profit_factor=0.553
+  group=0.90+ | trades=22 | wins=4 | win_rate=0.182 | total_R=-5.2607 | avg_R=-0.2391 | profit_factor=0.7676
+
+── 10. ENTRY_EDGE_DIST BINS ────────────────────────────────────────────
+  group=0.00-0.01 | trades=55 | wins=7 | win_rate=0.127 | total_R=-22.2002 | avg_R=-0.4036 | profit_factor=0.6313
+
+── 11. FILL DELAY (decision -> fill) ───────────────────────────────────
+
+  0-1min: 18 trades
+  2-5min: 15 trades
+  6-15min: 7 trades
+  16-30min: 15 trades
+  >30min: 0 trades
+
+── 12. FILLED vs EXPIRED QUALITY COMPARISON ────────────────────────────
+  group=filled_55 | count=55 | R_abs_bps_mean=34.3649 | R_abs_bps_median=32.5584 | R_abs_ATR_mean=1.2868 | R_abs_ATR_median=1.1498 | TP1_R_mean=6.1664 | TP1_R_median=5.6297 | body_ratio_mean=0.5966 | body_ratio_median=0.5955 | acceptance_close_strength_mean=0.8711 | acceptance_close_strength_median=0.8758
+  group=expired_no_fill_49 | count=49 | R_abs_bps_mean=33.6958 | R_abs_bps_median=31.6441 | R_abs_ATR_mean=1.3349 | R_abs_ATR_median=1.2043 | TP1_R_mean=5.8816 | TP1_R_median=5.4299 | body_ratio_mean=0.6969 | body_ratio_median=0.6925 | acceptance_close_strength_mean=0.898 | acceptance_close_strength_median=0.9255
+
+── 13. SL CLUSTER KEY STATS ────────────────────────────────────────────
+  n=48  direction={'short': 16, 'long': 32}  h1_context={'bullish': 20, 'bearish': 28}
+  mfe_R: mean=1.445  max=7.174
+  reached >=0.5R before SL: 32/48
+  reached >=1.0R before SL: 20/48
+  reached >=2.0R before SL: 11/48
+
+── 14. TP1 WINNER PROFILE ──────────────────────────────────────────────
+  n=7  direction={'long': 3, 'short': 4}  h1_context={'bearish': 2, 'bullish': 5}
+  RR range: 3.25 - 9.63  mean=5.67
+  mfe_R mean=5.835
+
+── 15. MAX CONSECUTIVE SL PERIOD ───────────────────────────────────────
+  max streak: 25
+  period: 2025-07-25 03:11:00 -> 2025-12-03 02:14:00
+  direction: {'long': 19, 'short': 6}
+  h1_context during streak: Counter({'bearish': 17, 'bullish': 8})
+
+── 16. LONG STRUCTURAL LOSS — IS IT REGIME-DEPENDENT? ─────────────────
+  long R by month:
+    2025-05: n=3 totalR=-3.978 wins=0
+    2025-06: n=5 totalR=9.446 wins=2
+    2025-07: n=2 totalR=1.785 wins=1
+    2025-08: n=3 totalR=-3.838 wins=0
+    2025-09: n=2 totalR=-2.515 wins=0
+    2025-10: n=6 totalR=-7.576 wins=0
+    2025-11: n=6 totalR=-7.523 wins=0
+    2025-12: n=2 totalR=-2.44 wins=0
+    2026-01: n=3 totalR=-3.678 wins=0
+    2026-03: n=2 totalR=-2.502 wins=0
+    2026-04: n=1 totalR=-1.213 wins=0
+  short R by month:
+    2025-05: n=2 totalR=-2.46 wins=0
+    2025-06: n=2 totalR=2.102 wins=1
+    2025-09: n=2 totalR=-2.559 wins=0
+    2025-10: n=1 totalR=-1.241 wins=0
+    2025-11: n=2 totalR=-2.537 wins=0
+    2025-12: n=4 totalR=8.169 wins=2
+    2026-01: n=1 totalR=-1.216 wins=0
+    2026-03: n=4 totalR=4.085 wins=1
+    2026-04: n=2 totalR=-2.513 wins=0
+
+── KEY FINDING ─────────────────────────────────────────────────────────
+  No rule changes proposed. Raw findings for review only.

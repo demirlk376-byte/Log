@@ -6,6 +6,8 @@ data/*.csv
 data/*.zip
 data/**/*.csv
 data/**/*.zip
-reports/*.csv
-reports/*.json
-reports/*.txt
+# real data not committed; reports are committed for auditability
+data/*.csv
+data/*.zip
+data/**/*.csv
+data/**/*.zip
