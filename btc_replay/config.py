@@ -36,7 +36,7 @@ DEFAULTS: Dict[str, Any] = {
 
     # 1H / 15M structure.
     "structure": {
-        "h1_context_lookback": 20,     # closed 1H candles for bias
+        "h1_context_lookback": 50,     # closed 1H candles for bias (must be >= h1_ema_slow)
         "h1_ema_fast": 8,
         "h1_ema_slow": 21,
         "m15_range_lookback": 20,      # closed 15M candles for range
